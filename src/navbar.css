@@ -1,0 +1,23 @@
+
+.navbarr {
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-item {
+    margin: 0 15px;
+  }
+  
+  .nav-item a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }

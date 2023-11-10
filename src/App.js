@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './navbar';
+import FingerprintScanner from './huellita';
+import EditProfessor from './EditProfessor';
+import RUDProfesor from './RUDProfesor';
+import RUDadmin from './RUDadmin';
+import DeleteComponent from './deleteProfesor';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/profesores" element={<RUDProfesor />} />
+          <Route path="/huellita" element={<FingerprintScanner />} />
+          <Route path="/admin" element={<RUDadmin />} />
+          <Route path="/editar/:username" element={<EditProfessor />} />
+          <Route path="/eliminar/:username" element={<DeleteComponent />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
